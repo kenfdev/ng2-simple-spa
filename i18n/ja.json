@@ -1,0 +1,16 @@
+{
+    "Username": "ユーザー名",
+    "Password": "パスワード",
+    "Login": "ログイン",
+    "Signup": "新規登録",
+    "Cancel": "キャンセル",
+    "DASHBOARD": "ダッシュボード",
+    "Create Post": "新規投稿",
+    "Edit": "編集",
+    "Delete": "削除",
+    "Title": "タイトル",
+    "Contents": "内容",
+    "Update": "更新",
+    "Edit Post": "投稿の編集",
+    "Post": "投稿"
+}

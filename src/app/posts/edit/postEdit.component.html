@@ -1,0 +1,12 @@
+<h1>{{ title }}</h1>
+<md-spinner *ngIf="!form"></md-spinner>
+<form *ngIf="form" [ngFormModel]="form" (ngSubmit)="onSendPost(form.value)">
+    <div>
+        <md-input placeholder="{{'Title' | translate}}" ngControl="title"></md-input>
+    </div>
+    <div>
+        <md-input placeholder="{{'Contents' | translate}}" ngControl="contents"></md-input>
+    </div>
+    <button type="button" md-raised-button (click)="onCanceled()">{{'Cancel' | translate}}</button>
+    <button type="submit" md-raised-button color="primary">{{ postId ? 'Update' : 'Post' | translate}}</button>
+</form>

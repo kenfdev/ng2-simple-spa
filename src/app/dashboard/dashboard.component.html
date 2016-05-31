@@ -1,0 +1,14 @@
+<h1>{{'DASHBOARD' | translate }}</h1>
+<button md-raised-button color="primary" (click)="onNewClicked()">{{'Create Post' | translate}}</button>
+<md-spinner *ngIf="posts.length <= 0"></md-spinner>
+<md-card *ngFor="let post of posts">
+    <md-card-title>{{post.title}}</md-card-title>
+    <md-card-subtitle>{{post.created | date}}</md-card-subtitle>
+    <md-card-content>
+        <p>{{post.contents}}</p>
+    </md-card-content>
+    <md-card-actions>
+        <button md-button (click)="onEdit(post)">{{'Edit' | translate }}</button>
+        <button md-button (click)="onDelete(post)">{{'Delete' | translate}}</button>
+    </md-card-actions>
+</md-card>

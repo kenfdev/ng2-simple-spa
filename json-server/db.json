@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "username": "test",
+      "password": "test",
+      "id": 1
+    }
+  ],
+  "posts": [
+    {
+      "title": "テスト",
+      "contents": "テスト投稿",
+      "created": "2016-05-30T14:06:21.488Z",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "title": "テスト3",
+      "contents": "さらにテスト",
+      "created": "2016-05-30T15:56:24.999Z"
+    },
+    {
+      "title": "TEST",
+      "contents": "テスト",
+      "created": "2016-05-30T14:48:46.987Z",
+      "id": 7
+    }
+  ]
+}

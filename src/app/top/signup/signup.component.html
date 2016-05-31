@@ -1,0 +1,11 @@
+<form>
+    <div>
+        <md-input placeholder="{{'Username' | translate}}" #username></md-input>
+    </div>
+    <div>
+        <md-input placeholder="{{'Password' | translate}}" type="password" #password></md-input>
+    </div>
+    <a [routerLink]="['/login']">{{'Cancel' | translate}}</a>
+    <button md-raised-button color="primary" (click)="handleSignup(username.value, password.value)">{{'Signup' | translate}}</button>
+</form>
+
