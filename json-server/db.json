@@ -4,6 +4,11 @@
       "username": "test",
       "password": "test",
       "id": 1
+    },
+    {
+      "username": "testuser",
+      "password": "testuser",
+      "id": 2
     }
   ],
   "posts": [
@@ -15,9 +20,9 @@
     },
     {
       "id": 6,
-      "title": "テスト3",
+      "title": "これもテスト",
       "contents": "さらにテスト",
-      "created": "2016-05-30T15:56:24.999Z"
+      "created": "2016-05-31T14:39:04.077Z"
     },
     {
       "title": "TEST",

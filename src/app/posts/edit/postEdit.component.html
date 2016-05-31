@@ -8,5 +8,5 @@
         <md-input placeholder="{{'Contents' | translate}}" ngControl="contents"></md-input>
     </div>
     <button type="button" md-raised-button (click)="onCanceled()">{{'Cancel' | translate}}</button>
-    <button type="submit" md-raised-button color="primary">{{ postId ? 'Update' : 'Post' | translate}}</button>
+    <button type="submit" md-raised-button color="primary">{{ postId ? ('Update' | translate) : ('Post' | translate)}}</button>
 </form>

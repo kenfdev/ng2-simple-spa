@@ -195,10 +195,10 @@ System.register("app/shared/posts.service", ['@angular/core', "app/shared/data.s
         }
     }
 });
-System.register("app/shared/navbar/navbar.component", ['@angular/core', '@angular/router', '@angular2-material/toolbar', '@angular2-material/button', "app/shared/auth.service"], function(exports_4, context_4) {
+System.register("app/shared/navbar/navbar.component", ['@angular/core', '@angular/router', '@angular2-material/toolbar', '@angular2-material/button', 'ng2-translate/ng2-translate', "app/shared/auth.service"], function(exports_4, context_4) {
     "use strict";
     var __moduleName = context_4 && context_4.id;
-    var core_4, router_1, toolbar_1, button_1, auth_service_1;
+    var core_4, router_1, toolbar_1, button_1, ng2_translate_1, auth_service_1;
     var NavbarComponent;
     return {
         setters:[
@@ -214,6 +214,9 @@ System.register("app/shared/navbar/navbar.component", ['@angular/core', '@angula
             function (button_1_1) {
                 button_1 = button_1_1;
             },
+            function (ng2_translate_1_1) {
+                ng2_translate_1 = ng2_translate_1_1;
+            },
             function (auth_service_1_1) {
                 auth_service_1 = auth_service_1_1;
             }],
@@ -225,18 +228,20 @@ System.register("app/shared/navbar/navbar.component", ['@angular/core', '@angula
                     this.isLoggedIn = false;
                 }
                 NavbarComponent.prototype.onLogout = function () {
+                    // TODO: this is usually async
                     this.authService.logout();
                     this.router.navigate(['/login']);
                 };
                 NavbarComponent = __decorate([
                     core_4.Component({
                         selector: 'mta-navbar',
-                        template: "\n    <md-toolbar color=\"primary\">\n        <span>Simple SPA</span>\n        <span class=\"fill-space\"></span>\n        <button *ngIf=\"authService.isLoggedIn\" md-button (click)=\"onLogout()\">\u30ED\u30B0\u30A2\u30A6\u30C8</button>\n    </md-toolbar>\n    ",
+                        template: "\n    <md-toolbar color=\"primary\">\n        <span>Simple SPA</span>\n        <span class=\"fill-space\"></span>\n        <button *ngIf=\"authService.isLoggedIn\" md-button (click)=\"onLogout()\">{{'Logout' | translate}}</button>\n    </md-toolbar>\n    ",
                         directives: [
                             router_1.ROUTER_DIRECTIVES,
                             toolbar_1.MD_TOOLBAR_DIRECTIVES,
                             button_1.MD_BUTTON_DIRECTIVES
-                        ]
+                        ],
+                        pipes: [ng2_translate_1.TranslatePipe]
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, auth_service_1.AuthService])
                 ], NavbarComponent);
@@ -249,7 +254,7 @@ System.register("app/shared/navbar/navbar.component", ['@angular/core', '@angula
 System.register("app/top/login/login.component", ['@angular/core', '@angular/router', '@angular2-material/input', '@angular2-material/button', 'ng2-translate/ng2-translate', "app/shared/auth.service"], function(exports_5, context_5) {
     "use strict";
     var __moduleName = context_5 && context_5.id;
-    var core_5, router_2, input_1, button_2, ng2_translate_1, auth_service_2;
+    var core_5, router_2, input_1, button_2, ng2_translate_2, auth_service_2;
     var LoginComponent;
     return {
         setters:[
@@ -265,8 +270,8 @@ System.register("app/top/login/login.component", ['@angular/core', '@angular/rou
             function (button_2_1) {
                 button_2 = button_2_1;
             },
-            function (ng2_translate_1_1) {
-                ng2_translate_1 = ng2_translate_1_1;
+            function (ng2_translate_2_1) {
+                ng2_translate_2 = ng2_translate_2_1;
             },
             function (auth_service_2_1) {
                 auth_service_2 = auth_service_2_1;
@@ -290,9 +295,9 @@ System.register("app/top/login/login.component", ['@angular/core', '@angular/rou
                         selector: 'mta-login',
                         templateUrl: 'src/app/top/login/login.component.html',
                         directives: [router_2.ROUTER_DIRECTIVES, input_1.MdInput, button_2.MdButton],
-                        pipes: [ng2_translate_1.TranslatePipe]
+                        pipes: [ng2_translate_2.TranslatePipe]
                     }), 
-                    __metadata('design:paramtypes', [router_2.Router, auth_service_2.AuthService, ng2_translate_1.TranslateService])
+                    __metadata('design:paramtypes', [router_2.Router, auth_service_2.AuthService, ng2_translate_2.TranslateService])
                 ], LoginComponent);
                 return LoginComponent;
             }());
@@ -303,7 +308,7 @@ System.register("app/top/login/login.component", ['@angular/core', '@angular/rou
 System.register("app/top/signup/signup.component", ['@angular/core', '@angular/router', '@angular2-material/input', '@angular2-material/button', 'ng2-translate/ng2-translate', "app/shared/auth.service"], function(exports_6, context_6) {
     "use strict";
     var __moduleName = context_6 && context_6.id;
-    var core_6, router_3, input_2, button_3, ng2_translate_2, auth_service_3;
+    var core_6, router_3, input_2, button_3, ng2_translate_3, auth_service_3;
     var SignupComponent;
     return {
         setters:[
@@ -319,8 +324,8 @@ System.register("app/top/signup/signup.component", ['@angular/core', '@angular/r
             function (button_3_1) {
                 button_3 = button_3_1;
             },
-            function (ng2_translate_2_1) {
-                ng2_translate_2 = ng2_translate_2_1;
+            function (ng2_translate_3_1) {
+                ng2_translate_3 = ng2_translate_3_1;
             },
             function (auth_service_3_1) {
                 auth_service_3 = auth_service_3_1;
@@ -343,7 +348,7 @@ System.register("app/top/signup/signup.component", ['@angular/core', '@angular/r
                         selector: 'mta-signup',
                         templateUrl: 'src/app/top/signup/signup.component.html',
                         directives: [router_3.ROUTER_DIRECTIVES, input_2.MdInput, button_3.MdButton],
-                        pipes: [ng2_translate_2.TranslatePipe]
+                        pipes: [ng2_translate_3.TranslatePipe]
                     }), 
                     __metadata('design:paramtypes', [router_3.Router, auth_service_3.AuthService])
                 ], SignupComponent);
@@ -356,7 +361,7 @@ System.register("app/top/signup/signup.component", ['@angular/core', '@angular/r
 System.register("app/dashboard/dashboard.component", ['@angular/core', '@angular/router', '@angular2-material/list', '@angular2-material/card', '@angular2-material/progress-circle', '@angular2-material/button', 'ng2-translate/ng2-translate', "app/shared/posts.service", "app/shared/auth.service"], function(exports_7, context_7) {
     "use strict";
     var __moduleName = context_7 && context_7.id;
-    var core_7, router_4, list_1, card_1, progress_circle_1, button_4, ng2_translate_3, posts_service_1, auth_service_4;
+    var core_7, router_4, list_1, card_1, progress_circle_1, button_4, ng2_translate_4, posts_service_1, auth_service_4;
     var DashboardComponent;
     return {
         setters:[
@@ -378,8 +383,8 @@ System.register("app/dashboard/dashboard.component", ['@angular/core', '@angular
             function (button_4_1) {
                 button_4 = button_4_1;
             },
-            function (ng2_translate_3_1) {
-                ng2_translate_3 = ng2_translate_3_1;
+            function (ng2_translate_4_1) {
+                ng2_translate_4 = ng2_translate_4_1;
             },
             function (posts_service_1_1) {
                 posts_service_1 = posts_service_1_1;
@@ -430,7 +435,7 @@ System.register("app/dashboard/dashboard.component", ['@angular/core', '@angular
                             card_1.MD_CARD_DIRECTIVES,
                             button_4.MdButton
                         ],
-                        pipes: [ng2_translate_3.TranslatePipe]
+                        pipes: [ng2_translate_4.TranslatePipe]
                     }), 
                     __metadata('design:paramtypes', [router_4.Router, posts_service_1.PostsService, auth_service_4.AuthService])
                 ], DashboardComponent);
@@ -443,7 +448,7 @@ System.register("app/dashboard/dashboard.component", ['@angular/core', '@angular
 System.register("app/posts/edit/postEdit.component", ['@angular/core', '@angular/router', '@angular/common', '@angular2-material/progress-circle', '@angular2-material/input', '@angular2-material/button', 'ng2-translate/ng2-translate', "app/shared/posts.service"], function(exports_8, context_8) {
     "use strict";
     var __moduleName = context_8 && context_8.id;
-    var core_8, router_5, common_1, progress_circle_2, input_3, button_5, ng2_translate_4, posts_service_2;
+    var core_8, router_5, common_1, progress_circle_2, input_3, button_5, ng2_translate_5, posts_service_2;
     var PostEditComponent;
     return {
         setters:[
@@ -465,8 +470,8 @@ System.register("app/posts/edit/postEdit.component", ['@angular/core', '@angular
             function (button_5_1) {
                 button_5 = button_5_1;
             },
-            function (ng2_translate_4_1) {
-                ng2_translate_4 = ng2_translate_4_1;
+            function (ng2_translate_5_1) {
+                ng2_translate_5 = ng2_translate_5_1;
             },
             function (posts_service_2_1) {
                 posts_service_2 = posts_service_2_1;
@@ -517,9 +522,9 @@ System.register("app/posts/edit/postEdit.component", ['@angular/core', '@angular
                         selector: 'mta-post-edit',
                         templateUrl: 'src/app/posts/edit/postEdit.component.html',
                         directives: [progress_circle_2.MD_PROGRESS_CIRCLE_DIRECTIVES, common_1.FORM_DIRECTIVES, input_3.MdInput, button_5.MdButton],
-                        pipes: [ng2_translate_4.TranslatePipe]
+                        pipes: [ng2_translate_5.TranslatePipe]
                     }), 
-                    __metadata('design:paramtypes', [router_5.Router, router_5.RouteSegment, common_1.FormBuilder, posts_service_2.PostsService, ng2_translate_4.TranslateService])
+                    __metadata('design:paramtypes', [router_5.Router, router_5.RouteSegment, common_1.FormBuilder, posts_service_2.PostsService, ng2_translate_5.TranslateService])
                 ], PostEditComponent);
                 return PostEditComponent;
             }());
@@ -530,7 +535,7 @@ System.register("app/posts/edit/postEdit.component", ['@angular/core', '@angular
 System.register("app/app.component", ['@angular/core', '@angular/router', '@angular2-material/icon', 'ng2-translate/ng2-translate', "app/shared/data.service", "app/shared/auth.service", "app/shared/posts.service", "app/shared/navbar/navbar.component", "app/top/login/login.component", "app/top/signup/signup.component", "app/dashboard/dashboard.component", "app/posts/edit/postEdit.component"], function(exports_9, context_9) {
     "use strict";
     var __moduleName = context_9 && context_9.id;
-    var core_9, router_6, icon_1, ng2_translate_5, data_service_ts_1, auth_service_5, posts_service_3, navbar_component_1, login_component_1, signup_component_1, dashboard_component_1, postEdit_component_1;
+    var core_9, router_6, icon_1, ng2_translate_6, data_service_ts_1, auth_service_5, posts_service_3, navbar_component_1, login_component_1, signup_component_1, dashboard_component_1, postEdit_component_1;
     var AppComponent;
     return {
         setters:[
@@ -543,8 +548,8 @@ System.register("app/app.component", ['@angular/core', '@angular/router', '@angu
             function (icon_1_1) {
                 icon_1 = icon_1_1;
             },
-            function (ng2_translate_5_1) {
-                ng2_translate_5 = ng2_translate_5_1;
+            function (ng2_translate_6_1) {
+                ng2_translate_6 = ng2_translate_6_1;
             },
             function (data_service_ts_1_1) {
                 data_service_ts_1 = data_service_ts_1_1;
@@ -629,7 +634,7 @@ System.register("app/app.component", ['@angular/core', '@angular/router', '@angu
                             component: login_component_1.LoginComponent
                         }
                     ]), 
-                    __metadata('design:paramtypes', [router_6.Router, ng2_translate_5.TranslateService])
+                    __metadata('design:paramtypes', [router_6.Router, ng2_translate_6.TranslateService])
                 ], AppComponent);
                 return AppComponent;
             }());
@@ -640,7 +645,7 @@ System.register("app/app.component", ['@angular/core', '@angular/router', '@angu
 System.register("main", ['@angular/platform-browser-dynamic', '@angular/http', '@angular/router', 'ng2-translate/ng2-translate', "app/app.component"], function(exports_10, context_10) {
     "use strict";
     var __moduleName = context_10 && context_10.id;
-    var platform_browser_dynamic_1, http_2, router_7, ng2_translate_6, app_component_1;
+    var platform_browser_dynamic_1, http_2, router_7, ng2_translate_7, app_component_1;
     return {
         setters:[
             function (platform_browser_dynamic_1_1) {
@@ -652,8 +657,8 @@ System.register("main", ['@angular/platform-browser-dynamic', '@angular/http', '
             function (router_7_1) {
                 router_7 = router_7_1;
             },
-            function (ng2_translate_6_1) {
-                ng2_translate_6 = ng2_translate_6_1;
+            function (ng2_translate_7_1) {
+                ng2_translate_7 = ng2_translate_7_1;
             },
             function (app_component_1_1) {
                 app_component_1 = app_component_1_1;
@@ -662,7 +667,7 @@ System.register("main", ['@angular/platform-browser-dynamic', '@angular/http', '
             platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent, [
                 http_2.HTTP_PROVIDERS,
                 router_7.ROUTER_PROVIDERS,
-                ng2_translate_6.TRANSLATE_PROVIDERS
+                ng2_translate_7.TRANSLATE_PROVIDERS
             ]);
         }
     }
