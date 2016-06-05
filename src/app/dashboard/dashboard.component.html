@@ -1,7 +1,7 @@
 <h1>{{'DASHBOARD' | translate }}</h1>
 <button md-raised-button color="primary" (click)="onNewClicked()">{{'Create Post' | translate}}</button>
 <md-spinner *ngIf="posts.length <= 0"></md-spinner>
-<md-card *ngFor="let post of posts">
+<md-card *ngFor="let post of posts | async">
     <md-card-title>{{post.title}}</md-card-title>
     <md-card-subtitle>{{post.created | date}}</md-card-subtitle>
     <md-card-content>

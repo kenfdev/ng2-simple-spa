@@ -3,3 +3,4 @@ typings/
 app/*.js
 app/*.map
 *.log
+json-server/db.json

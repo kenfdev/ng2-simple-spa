@@ -9,6 +9,16 @@
       "username": "testuser",
       "password": "testuser",
       "id": 2
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "id": 3
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "id": 4
     }
   ],
   "posts": [

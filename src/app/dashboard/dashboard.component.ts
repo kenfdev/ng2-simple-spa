@@ -28,7 +28,7 @@ import { AuthService } from '../shared/auth.service';
 })
 export class DashboardComponent implements OnInit {
 
-    posts: any[] = [];
+    posts: any;
 
     constructor(
         private router: Router,
@@ -41,8 +41,7 @@ export class DashboardComponent implements OnInit {
     }
 
     private fetchPosts() {
-        this.postsService.getPosts()
-            .subscribe(posts => this.posts = posts);
+        this.posts = this.postsService.getPosts()
     }
 
     onNewClicked() {
