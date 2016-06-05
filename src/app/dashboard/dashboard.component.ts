@@ -28,6 +28,7 @@ import { AuthService } from '../shared/auth.service';
 })
 export class DashboardComponent implements OnInit {
 
+    isLoading: boolean = true;
     posts: any;
 
     constructor(
@@ -41,7 +42,7 @@ export class DashboardComponent implements OnInit {
     }
 
     private fetchPosts() {
-        this.posts = this.postsService.getPosts()
+        this.posts = this.postsService.getPosts().do(() => this.isLoading = false);
     }
 
     onNewClicked() {

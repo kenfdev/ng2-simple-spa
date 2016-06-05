@@ -398,12 +398,14 @@ System.register("app/dashboard/dashboard.component", ['@angular/core', '@angular
                     this.router = router;
                     this.postsService = postsService;
                     this.authService = authService;
+                    this.isLoading = true;
                 }
                 DashboardComponent.prototype.ngOnInit = function () {
                     this.fetchPosts();
                 };
                 DashboardComponent.prototype.fetchPosts = function () {
-                    this.posts = this.postsService.getPosts();
+                    var _this = this;
+                    this.posts = this.postsService.getPosts().do(function () { return _this.isLoading = false; });
                 };
                 DashboardComponent.prototype.onNewClicked = function () {
                     this.router.navigate(['/posts/new']);
