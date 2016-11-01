@@ -9,12 +9,12 @@
 
   //map tells the System loader where to look for things
   var  map = {
-    '@angular':                   'https://npmcdn.com/@angular', // sufficient if we didn't pin the version
-    'rxjs':                       'https://npmcdn.com/rxjs@5.0.0-beta.6',
-    'ts':                         'https://npmcdn.com/plugin-typescript@4.0.10/lib/plugin.js',
-    'typescript':                 'https://npmcdn.com/typescript@1.8.10/lib/typescript.js',
-    '@angular2-material': 'https://npmcdn.com/@angular2-material',
-    'ng2-translate': 'https://npmcdn.com/ng2-translate'
+    '@angular':                   'https://unpkg.com/@angular', // sufficient if we didn't pin the version
+    'rxjs':                       'https://unpkg.com/rxjs@5.0.0-beta.6',
+    'ts':                         'https://unpkg.com/plugin-typescript@4.0.10/lib/plugin.js',
+    'typescript':                 'https://unpkg.com/typescript@1.8.10/lib/typescript.js',
+    '@angular2-material': 'https://unpkg.com/@angular2-material',
+    'ng2-translate': 'https://unpkg.com/ng2-translate'
  };
 
   //packages tells the System loader how to load when no filename and/or no extension
@@ -50,7 +50,7 @@
   // Add map entries for each angular package
   // only because we're pinning the version with `ngVer`.
   ngPackageNames.forEach(function(pkgName) {
-    map['@angular/'+pkgName] = 'https://npmcdn.com/@angular/' + pkgName + ngVer;
+    map['@angular/'+pkgName] = 'https://unpkg.com/@angular/' + pkgName + ngVer;
   });
 
   // Add package entries for angular packages
@@ -66,7 +66,7 @@
   // Add map entries for each angular material package
   // only because we're pinning the version with `mdVer`.
   mdPackageNames.forEach(function(pkgName) {
-    map['@angular2-material/'+pkgName] = 'https://npmcdn.com/@angular2-material/' + pkgName;
+    map['@angular2-material/'+pkgName] = 'https://unpkg.com/@angular2-material/' + pkgName;
   });
 
   // Add package entries for angular material packages
